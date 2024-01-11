@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../Styles/nav_bar.css">
+        <link rel="stylesheet" href="../../Styles/simulation_page_expt5.css">
+        <link rel="icon" type="image/x-icon" href="../../Assets/Images/TCE_logo.png">
+        <title>5. Commutation of SCR - Simulation</title>
+    </head>
+    <body>
+        <header>
+            <div class="college_logo_name">
+                <img src="../../Assets/Images/TCE_logo.png" alt="Logo" height="50px">
+                <h2>Thiagarajar College of Engineering<br>Department of EEE</h2>
+            </div>
+            
+            <div class="heading_virtual_labs">
+                <h1>Power Electronics Virtual Laboratory</h1>
+            </div>
+
+            <div class="nav_links">
+                <li>
+                    <ul><a href="../../index.html">Home</a></ul>
+                    <ul><a href="https://www.tce.edu/" target="_blank">About TCE</a></ul>
+                    <ul><a href="../feedback.html">Feedback</a></ul>
+                    <ul><a href="../more.html">More</a></ul>
+                </li>
+            </div>
+            
+        </header>
+
+        <!-- Experiment Title -->
+        <section class="sub_navigation">
+            <div class="title">
+                <h1>Resonant Pulse Commutation</h1>
+            </div>
+            <div class="main_div">
+                <div class="navigation">
+                    <li>
+                        <ul><a href="expt5_aim.html">Aim</a></ul>
+                        <ul><a href="expt5_theory.html">Theory</a></ul>
+                        <ul><a href="expt5_preQuiz.html">Pre-Quiz</a></ul>
+                        <ul><a href="expt5_circuit_design.html">Circuit Design</a></ul>
+                        <ul><a href="#"  id="current_link">Simulation</a></ul>
+                        <ul><a href="expt5_post_quiz.html">Post-Quiz</a></ul>
+                    </li>
+                </div>
+            </div>
+        </section>
+
+        <section id="simulation" class="simulation"> 
+            
+            <div class="option">
+                <input type="radio" id="voltageCom" name="circuitOption" value="VC" checked><label for="voltageCom" style="margin-right:20px ;">Voltage Commutation</label>
+                <input type="radio" id="currentCom" name="circuitOption" value="CC"><label for="currentCom">Current Commutation</label>
+            </div>
+
+            <!-- circuit diagram div     -->
+            <div class="circuit" >
+                <div id="push" class="invisible"></div>
+                <div id="switch" class="invisible"></div>
+                <div id="inVolt" class="invisible"></div>
+                <div id="comVolt" class="invisible"></div>
+                <div id="gateVolt" class="invisible"></div>
+                <div id="loadRes" class="invisible"></div>
+                <div id="gateRes" class="invisible"></div>
+                <div id="outVolt" class="invisible"></div>
+                <div id="current" class="invisible"></div>
+
+                <div class="leftImg">
+                    <img  id="pushCircuit" src="/Assets/Images/Commutation/Circuit_Unpushed_V.png" alt="">
+                </div>
+                <div class="rightImg">
+                    <img  id="triCircuit" src="/Assets/Images/Commutation/Circuit_Position0.png" alt="">
+                </div>
+            </div>
+
+        </section>
+
+        <section id="output">
+            <div class="graph">
+                <canvas id="waveform" height="600px" width="400px">
+                </canvas>
+            </div>
+        </section>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js"
+        integrity="sha512-Lii3WMtgA0C0qmmkdCpsG0Gjr6M0ajRyQRQSbTF6BsrVh/nhZdHpVZ76iMIPvQwz1eoXC3DmAg9K51qT5/dEVg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="../../Script/Expt5/Expt5_simulation.js"></script>
+    </body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../Styles/nav_bar.css">
+        <link rel="stylesheet" href="../../Styles/theory_page.css">
+        <link rel="icon" type="image/x-icon" href="../../Assets/Images/TCE_logo.png">
+        <title>5. Commutation of SCR - Theory</title>
+    </head>
+    <body>
+        <header>
+            <div class="college_logo_name">
+                <img src="../../Assets/Images/TCE_logo.png" alt="Logo" height="50px">
+                <h2>Thiagarajar College of Engineering<br>Department of EEE</h2>
+            </div>
+            
+            <div class="heading_virtual_labs">
+                <h1>Power Electronics Virtual Laboratory</h1>
+            </div>
+
+            <div class="nav_links">
+                <li>
+                    <ul><a href="../../index.html">Home</a></ul>
+                    <ul><a href="https://www.tce.edu/" target="_blank">About TCE</a></ul>
+                    <ul><a href="../feedback.html">Feedback</a></ul>
+                    <ul><a href="../more.html">More</a></ul>
+                </li>
+            </div>
+            
+        </header>
+
+        <!-- Experiment Title -->
+        <section class="sub_navigation">
+            <div class="title">
+                <h1>Resonant Pulse Commutation</h1>
+            </div>
+            <div class="navigation">
+                <li>
+                    <ul><a href="expt5_aim.html">Aim</a></ul>
+                    <ul><a href="#" id="current_link">Theory</a></ul>
+                    <ul><a href="expt5_preQuiz.html">Pre-Quiz</a></ul>
+                    <ul><a href="expt5_circuit_design.html">Circuit Design</a></ul>
+                    <ul><a href="expt5_simulation.html">Simulation</a></ul>
+                    <ul><a href="expt5_post_quiz.html">Post-Quiz</a></ul>
+                </li>
+            </div>
+        </section>
+        <section class="container">
+
+            <div class="infoBox glassmorphism">
+                <h3>SCR Commutation - Introduction</h3>
+                <ul>
+                    <li>Commutation is defined as the process of <b>turning-off a SCR</b>.</li>
+                    <li>Once an SCR starts conducting, gate loses control over the device, therefore, <b>external means</b> may have to be adopted to commutate the SCR.</li>
+                    <li>An SCR is said to be turned OFF if there is no flow of forward current and even if the SCR is once again forward biased, the SCR will not conduct without gate pulse.</li>
+                    <li>There are majorly two types of SCR commutation:
+                        <ol>
+                            <li>Natural Commutation</li>
+                            <li>Forced Commutation</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="infoBox glassmorphism">
+                <h3>Conditions to properly turn-off an SCR</h3>
+                <ol>
+                    <li>The forward current of SCR must be reduced below the holding current.</li>
+                    <li>A sufficient reverse voltage must be applied across the SCR to regain its forward blocking state.</li>
+                </ol>
+                <p>When the SCR is turned OFF by reducing forward current to zero, excess charge carriers exists in different layers. To regain the forward blocking state of an SCR, these excess carriers must be recombined. Therefore, in order to accelerate this recombination process, a reverse voltage is applied across the SCR.</p>
+            </div>
+
+            <div class="infoBox glassmorphism">
+                <h3>Natural Commutation</h3>
+                <ul>
+                    <li>Natural Commutation occurs only in AC circuits and it is named so because it does not require any external circuit.</li>
+                    <li>If the SCR is connected to an AC supply, at every end of the positive half cycle, the anode current naturally becomes zero (due to the alternating nature of the AC Supply).</li>
+                    <li>As the current in the circuit goes through the natural zero, a reverse voltage is applied immediately across the SCR (due to the negative half cycle).</li>
+                    <li>This method of commutation is also called as Source Commutation or AC Line Commutation or Class F Commutation.</li>
+                    <li>This commutation is possible with line commutated inverters, controlled rectifiers, cyclo converters and AC voltage regulators.</li>
+                </ul>
+            </div>
+            
+            <div class="infoBox glassmorphism">
+                <h3>Forced Commutation</h3>
+                <ul>
+                    <li>Forced Commutation is used only in DC circuits since there is no natural zero crossing in DC Circuits.</li>
+                    <li>It is also called as DC commutation</li>
+                    <li>It requires commutating elements like inductors and capacitors to <b>forcefully reduce the anode current</b> of the SCR below the holding current value. This is why it is called as Forced Commutation.</li>
+                    <li>Forced commutation is used in Chopper and Inverters circuits.</li>
+                    <li>Forced commutation is further divided into five categories:
+                        <ol>
+                            <li><b>Class A:</b> Self or Load Commutation</li>
+                            <li><b>Class B:</b> Resonant Pulse Commutation</li>
+                            <li><b>Class C:</b> Complementary Commutation</li>
+                            <li><b>Class D:</b> Impulse Commutation</li>
+                            <li><b>Class E:</b> External Pulse Commutation</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+
+            
+
+            <div class="infoBox glassmorphism">
+                <h3>Class-B Commutation: Resonant Pulse Commutation</h3>
+                <ul>
+                    <li>In class-B commutation, the LC circuit is connected in parallel to the main SCR.</li>
+                </ul>
+            </div>
+
+            <h1 id="additionalTheory">Additional Theory</h1>
+
+            
+            <div class="accordion">
+
+                <div class="contentBox">
+                    <div class="label">Load Commutation</div>
+                    <div class="content">
+                        <div class="imgDiv">
+                            <!-- <img src="../../Assets/Images/TheoryPage_Images/AC_Voltage_Controller/integralCycleControl.png" alt="Cycle control waveform diagram" width="80%"> -->
+                        </div>
+                        <ul>
+                            <li>Integral cycle control consists of switching on the supply to load for an integral number of cycles and then switching off the supply for a further number of cycles</li>
+                            <li>This control technique is used in applications where mechanical time constant or thermal time constant is of the order of several seconds.</li>
+                            <li><b>For example,</b> mechanical time constant for many of the speed-control drives or thermal time constant for many of the heating load is usually quite high. For such applications, almost no variation in speed or temperature will be noticed if control is achieved by connecting the load to source for some on-cycles and then disconnecting the load for some off-cycles</li>
+                            <li>The equation of output RMS voltage is given below. </li>
+                            <div class="imgDiv">
+                                <!-- <img src="../../Assets/Images/TheoryPage_Images/AC_Voltage_Controller/integralCycleControlFormula.jpg" alt="" height="75px" id="moreMarginNeeded"> -->
+                            </div>
+                            <li>where, n indicates the number of on-cycles, m indicates the number of off-cycles and V<sub>s</sub> is the RMS value of supply voltage. </li>
+                        </ul>   
+                    </div> 
+                </div>
+
+                <div class="contentBox">
+                    <div class="label">Other possible configurations of AC voltage controllers</div>
+                    <div class="content">
+                        <p><b>Note:</b> The below are the other configurations of phase controlled full wave AC voltage controller.</p>
+                        <br><br>
+                        <h2>ACVR with Triac</h2>
+                        <div class="imgDiv">
+                            <img src="../../Assets/Images/TheoryPage_Images/AC_Voltage_Controller/AcvrWithTriac.PNG" alt="ACVR with triac" width="50%">
+                            <ul>
+                                <li>This configuration is suitable for <b>low-power applications</b> where the load is resistive and has only a small inductance.</li>
+                            </ul> 
+                        </div>
+                         
+                        <br>
+                        <h2>ACVR with only one SCR</h2>
+                        <div class="imgDiv">
+                            <img src="../../Assets/Images/TheoryPage_Images/AC_Voltage_Controller/acvrWithOneSCR.PNG" alt="ACVR with only one SCR" width="50%">
+                            <ul>
+                                <li>This configuration uses 4 power diodes and 1 SCR.</li>
+                                <li>In the positive half cycle, diodes D1, D3 and SCR T1 will conduct. During negative half cycle, diodes D2, D4 and SCR T1 will conduct.</li>
+                                <li>This configuration is <b>cheaper</b> as only one SCR is used (only one firing pulse circuitry is required)</li>
+                                <li>The disadvantage of this configuration is that, at any time, 3 devices (2 diodes and 1 SCR) will be conducting. This causes <b>more voltage drop</b>.</li>
+                            </ul>
+                        </div>
+                        <br>
+                    </div> 
+                </div>
+
+            </div>
+        </section>
+        <script>
+            const accordion = document.getElementsByClassName('contentBox');
+
+            for(i = 0; i<accordion.length; i++) {
+                accordion[i].addEventListener('click', function() {
+                    this.classList.toggle('active')
+                })
+            }
+            
+        </script>
+    </body>
+</html>
