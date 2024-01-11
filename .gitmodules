@@ -1,0 +1,3 @@
+[submodule "PowerElectronicsLab"]
+	path = PowerElectronicsLab
+	url = ./PowerElectronicsLab/

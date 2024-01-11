@@ -1,0 +1,28 @@
+oc test:
+Iron losses, Pi = Wattmeter reading = Wo (W)
+No load current = Ammeter reading = Io (A)
+Applied voltage = Voltmeter reading = Vo (V)
+Input power, Wo = Vo Io cosfo (W)
+Therefore, No load power factor, cosfo = Wo Io / Vo
+Iw = Io cosfo (A)
+Im = Io sinfo (A)
+Ro = Vo / Iw (ohm)
+Xo = Vo / Im (ohm)
+
+
+sc test:
+Full load Copper loss, Pcu = Wattmeter reading = Wsc (W)
+Applied voltage = Voltmeter reading = Vsc (V)
+Full load primary current = Ammeter reading = Isc (A)
+Pcu = Isc^2 * Req (W)
+Therefore, Req= Pcu / Isc^2 (ohm)
+Where Req is the equivalent resistance of transformer windings.
+Equivalent impedance, Zeq = Vsc / Isc (ohm)
+Equivalent reactance, Xeq = sqrt(Zeq^2 - Req^2) (ohm)
+Short circuit power factor = Wsc / Vsc* Isc
+
+load test:
+% Efficiency = (Output power (Ws) / Input power (Wp)) x 100
+% Regulation = ((Vso - Vs) / Vso) x 100
+Where, Vso is no load secondary voltage
+Vs is secondary voltage at load condition

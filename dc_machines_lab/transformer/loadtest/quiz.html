@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="author" content="Maniraj">
+    <title>Load test on single phase transformer</title>
+  <!--<link rel="stylesheet" href="machine_styles.css">-->
+  <link rel="stylesheet" href="../project-styles1.css">
+    <style>h1{text-align: center;}
+    </style><style>
+    #qzb{background-color: maroon;}</style>
+    <script>
+    function answer(){
+        var q1=document.getElementsByName('q1');
+        for(var i=0;i<q1.length;i++){
+            if(q1[i].checked){
+                if(q1[i].value=="low rating transformers"){document.getElementsByTagName('label')[i].style.color="green";}
+                else{document.getElementsByTagName('label')[i].style.color="red";}
+            
+            }
+        }
+         var q2=document.getElementsByName('q2');
+        for(var i=0;i<q2.length;i++){
+            if(q2[i].checked){
+                if(q2[i].value=="Both"){document.getElementsByTagName('label')[3+i].style.color="green";}
+                else{document.getElementsByTagName('label')[3+i].style.color="red";}
+            
+            }
+        }
+         var q3=document.getElementsByName('q3');
+        for(var i=0;i<q3.length;i++){
+            if(q3[i].checked){
+                if(q3[i].value=="all"){document.getElementsByTagName('label')[6+i].style.color="green";}
+                else{document.getElementsByTagName('label')[6+i].style.color="red";}
+            
+            }
+        }
+        
+        var q4=document.getElementsByName('q4');
+        for(var i=0;i<q4.length;i++){
+            if(q4[i].checked){
+                if(q4[i].value=="varload"){document.getElementsByTagName('label')[9+i].style.color="green";}
+                else{document.getElementsByTagName('label')[9+i].style.color="red";}
+            
+            }
+        }
+        
+        var q5=document.getElementsByName('q5');
+        for(var i=0;i<q5.length;i++){
+            if(q5[i].checked){
+                if(q5[i].value=="stepped up"){document.getElementsByTagName('label')[12+i].style.color="green";}
+                else{document.getElementsByTagName('label')[12+i].style.color="red";}
+            
+            }
+        }
+        
+    
+    }
+    
+    </script>
+    
+  </head><body>
+     <!-- Navigation menu -->
+  <div class="topnav" id="myTopnav">
+    <div class="myc">
+      <ul>
+        <li><img src="../Thiagarajar_College_of_Engineering_logo.png" alt="TCE Logo"></li>  
+        <li><strong>Thiagarajar College of Engineering</strong></li>
+        
+        <a href="#contact">Help</a>
+        <a  href="https://www.tce.edu/dept/eee/home">About</a>
+        <a href="#contact">Contact</a>
+        <!--<a href="#contact">Login</a>-->
+        <a href="main.html" class="active">Home</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i> </a>
+      </ul>
+      
+    </div>
+  </div>
+   <!-- <nav><h1>Load Test on Single Phase Transformer</h1></nav>
+
+   <ul>
+  <li><a href="aim.html">Aim</a></li>
+  <li><a href="apparatus.html">Apparatus Used</a></li>
+  <li><a href="theory.html">Theory</a></li>
+  <li><a href="procedure.html">Procedure</a></li>
+  <li><a href="formulae.html">Formulae and Model graph</a></li>
+  <li><a href="simulator_main.html">Simulator</a></li>
+  <li><a href="quiz.html" class="active">Quiz</a></li>
+</ul>-->
+
+<h1>Open Circuit Test on Single Phase Transformer</h1><br><br>
+<nav id="mininav">
+  <a href="aim.html">Aim</a>
+  <a class="active" href="apparatus.html"></a>
+  <a href="theory.html">Theory</a>
+  <a href="procedure.html">Procedure</a>
+  <a href="formulae.html">Formulae and Model graph</a>
+  <a href="simulator_main.html">Simulator</a>
+  <a href="quiz.html">Quiz</a>
+</nav>
+
+<div style="margin-left:25%;padding:1px 16px;height:auto;">
+   <h2>Test Yourself:</h2>
+    <form id="quiz" name="quiz">
+        <p>1. Load test most suited for .....</p>
+  <input type="radio" id="low rating transformers" name="q1" value="low rating transformers">
+  <label for="low rating transformers" >Low rating transformers</label><br>
+  <input type="radio" id="high rating transformers" name="q1" value="high rating transformers">
+  <label for="high rating transformers" >High rating transformers</label><br>
+  <input type="radio" id="both" name="q1" value="both">
+  <label for="both" >Both</label>
+
+  <br>  
+
+        <p>2. Voltage regulation is because of .....</p>
+  <input type="radio" id="res" name="q2" value="res">
+  <label for="res">Internal resistance of winding</label><br>
+  <input type="radio" id="reactance" name="q2" value="reactance">
+  <label for="reactance">Leakage reactance of winding</label><br>  
+  <input type="radio" id="Both" name="q2" value="Both">
+  <label for="Both">Both</label><br>
+        
+        <p>3. Finding the performance of transformer in direct loading method leads to .....</p>
+  <input type="radio" id="power" name="q3" value="power">
+  <label for="power" >More power consumption</label><br>
+  <input type="radio" id="load" name="q3" value="load">
+  <label for="load" >Availability of loads</label><br>
+  <input type="radio" id="all" name="q3" value="all">
+  <label for="all" >All the above</label>
+        
+        <p>4. Performing the load test will give you the .....</p>
+  <input type="radio" id="varload" name="q4" value="varload">
+  <label for="varload" >Performance of transformer at various load conditions</label><br>
+  <input type="radio" id="acc" name="q4" value="acc">
+  <label for="acc" >Accuracy in results</label><br>
+  <input type="radio" id="allof" name="q4" value="allof">
+  <label for="allof" >All the above</label>
+
+  <br>  
+         <p>5. If the voltage is stepped down, the current will be .....</p>
+  <input type="radio" id="stepped down" name="q5" value="stepped down">
+  <label for="stepped down" >Stepped down</label><br>
+  <input type="radio" id="stepped up" name="q5" value="stepped up">
+  <label for="stepped up">Stepped up</label><br>
+  <input type="radio" id="Constant" name="q5" value="Constant">
+  <label for="Constant" >Constant</label>
+
+  <br>  
+  <br>
+  <input type="button" value="Submit" id=qzb onclick="answer()">
+    </form>
+    </div> 
+    </body></html>
