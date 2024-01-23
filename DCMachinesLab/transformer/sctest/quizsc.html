@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="author" content="Maniraj">
+    <title>Short circuit test on single phase transformer</title>
+  <!--<link rel="stylesheet" href="machine_styles.css">-->
+  <link rel="stylesheet" href="../project-styles1.css">
+    <style>h1{text-align: center;}
+    #qzb{background-color: maroon;}
+    
+         
+.myc {background: linear-gradient(45deg,#000428,#004e92);color: #ffffff;height: 100px;padding: 10px 50px 0px 10px;}
+.myc img {height: 40px;margin-bottom: -10px;margin-right: 0px;}
+.myc ul li {display: inline;padding-right: 10px;font-weight: bold;font-size: 30px;}
+.myc ul a {color: white;font-weight: normal;}
+
+    
+    
+    
+    </style>
+  
+    <script>
+    function answer(){
+        var q1=document.getElementsByName('q1');
+        for(var i=0;i<q1.length;i++){
+            if(q1[i].checked){
+                if(q1[i].value=="copperloss"){document.getElementsByTagName('label')[i].style.color="green";}
+                else{document.getElementsByTagName('label')[i].style.color="red";}
+            
+            }
+        }
+         var q2=document.getElementsByName('q2');
+        for(var i=0;i<q2.length;i++){
+            if(q2[i].checked){
+                if(q2[i].value=="hv"){document.getElementsByTagName('label')[3+i].style.color="green";}
+                else{document.getElementsByTagName('label')[3+i].style.color="red";}
+            
+            }
+        }
+         var q3=document.getElementsByName('q3');
+        for(var i=0;i<q3.length;i++){
+            if(q3[i].checked){
+                if(q3[i].value=="series"){document.getElementsByTagName('label')[6+i].style.color="green";}
+                else{document.getElementsByTagName('label')[6+i].style.color="red";}
+            
+            }
+        }
+        
+        var q4=document.getElementsByName('q4');
+        for(var i=0;i<q4.length;i++){
+            if(q4[i].checked){
+                if(q4[i].value=="current"){document.getElementsByTagName('label')[9+i].style.color="green";}
+                else{document.getElementsByTagName('label')[9+i].style.color="red";}
+            
+            }
+        }
+        
+        var q5=document.getElementsByName('q5');
+        for(var i=0;i<q5.length;i++){
+            if(q5[i].checked){
+                if(q5[i].value=="yes"){document.getElementsByTagName('label')[12+i].style.color="green";}
+                else{document.getElementsByTagName('label')[12+i].style.color="red";}
+            
+            }
+        }
+        
+    
+    }
+    
+    </script>
+    
+  </head><body>
+    <nav class="myc"><h1>Short Circuit Test on Single Phase Transformer</h1></nav>
+    <br>
+
+   
+  <nav id="mininav">
+    <a href="aimsc.html">Aim</a>
+    <a href="apparatussc.html">Apparatus Used</a>
+    <a href="theorysc.html"> Theory</a>
+    <a href="quizsc.html"> Prequiz</a>
+    <a  href="proceduresc.html"> Procedure</a>
+    <a href="formulaesc.html">Formulae</a>
+    <a href="simulator_main_sc.html"> Simulation</a>
+    
+  </nav>
+<div style="margin-left:25%;padding:1px 16px;height:auto;">
+    
+     <h2>Test Yourself:</h2>
+    <form id="quiz" name="quiz">
+        <p>1. Short Circuit Test on transformer will gives .....</p>
+  <input type="radio" id="eddy currrent loss" name="q1" value="eddy current loss">
+  <label for="eddy currrent loss" >Eddy currrent loss</label><br>
+  <input type="radio" id="copperloss" name="q1" value="copperloss">
+  <label for="copperloss" >Copperloss</label><br>
+  <input type="radio" id="none" name="q1" value="none">
+  <label for="none" >None of the above</label>
+
+  <br>  
+
+        <p>2. Short Circuit Test conducted in .....</p>
+  <input type="radio" id="hv" name="q2" value="hv">
+  <label for="hv">HV side</label><br>
+  <input type="radio" id="lv" name="q2" value="lv">
+  <label for="lv">LV side</label><br>  
+  <input type="radio" id="Both" name="q2" value="Both">
+  <label for="Both">Both HV and LV side</label><br>
+        
+        <p>3. SC Test is used to find the .....</p>
+  <input type="radio" id="series" name="q3" value="series">
+  <label for="series" >Series branch parameters</label><br>
+  <input type="radio" id="turns" name="q3" value="turns">
+  <label for="turns" >Turns ratio of Transformer</label><br>
+  <input type="radio" id="all" name="q3" value="all">
+  <label for="all" >All the above</label>
+        
+        <p>4. Performing the sc test below the rated current will give you the .....</p>
+  <input type="radio" id="full" name="q4" value="full">
+  <label for="full" >Full load copper loss</label><br>
+  <input type="radio" id="current" name="q4" value="current">
+  <label for="current" >Copper loss for corresponding current</label><br>
+  <input type="radio" id="cant" name="q4" value="cant">
+  <label for="cant" >Can't determined</label>
+
+  <br>  
+         <p>5. In a transformer, can we determine at what KVA the transformer have maximum efficiency .....</p>
+  <input type="radio" id="yes" name="q5" value="yes">
+  <label for="yes" >Yes</label><br>
+  <input type="radio" id="no" name="q5" value="no">
+  <label for="no" >No</label>
+
+  <br>  
+  <br>
+  <input type="button" value="Submit" id=qzb onclick="answer()">
+    </form>
+    </div> 
+    </body></html>

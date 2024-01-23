@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head> <meta charset="utf-8">
+    <meta name="author" content="Maniraj">
+    <title>Simulator</title>
+    <link rel="stylesheet" href="simstylesoc.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="simscriptoc.js"></script>
+    <style>
+    </style><script>
+    </script>
+    </head>
+<body>
+    <script>
+        </script><div class="tooltip">Procedure
+  <span class="tooltiptext">Do not refresh the page!<ol><li>Understand the circuit connections given. Make sure all the precautions for the experiment were done.</li>
+        <li>Select the transformer rating and suitable HV, LV configuration that you want to connect and fix it.</li>
+        <li>Turn on the power supply.</li>
+    <li>Adjust the variac gradually until the rated voltage.</li>
+    <li>Note down the primary voltmeter, ammeter, wattmeter readings (by just adding it to the table).</li>
+    <li>After taking the readings, decrease the variac to zero.</li>
+    <li>Turn off the supply.</li>
+    </ol></span>
+</div>
+   <div class=select>
+        <form><label for="kvaselect">Select the Transformer Rating:</label><br>
+           <select id="kvaselect" name="kvaselect">
+            <option value="5 KVA">5 KVA</option>
+            <option value="4 KVA">4 KVA</option>
+            <option value="3 KVA">3 KVA</option>
+            <option value="2 KVA">2 KVA</option>
+            <option value="1 KVA">1 KVA</option></select><br><br>
+            <input type=button id=kvafix value="Fix Rating" onclick="fixkva()"><br><br>
+            
+            <label for="ratioselect">Select the Transformer Ratio:</label><br>
+           <select id="ratioselect" name="ratioselect">
+            <option value="(250 V / 250 V)">1:1</option>
+            <option value="(125 V / 250 V)">1:2</option>
+            <option value="(250 V / 125 V)">2:1</option></select><br><br>
+            <input type=button id=ratiofix value="Fix Ratio" onclick="fixratio()"><br><br>
+            
+        <input type="button" value="Add Readings to Table" onclick="addToTable()"><br><br>
+        <input type="button" value="Find Equivalent Parameters" onclick="findParameters()"><br><br>
+            <p>Equivalent Exciting Resistance : <span id=eqres></span></p>
+            <p>Equivalent Exciting Reactance : <span id=eqreact></span></p>
+           </form>
+       </div>
+    
+   <div class="bord" ><table id=setup style="border-collapse: collapse ;">
+       <tr><td></td>
+        <td></td>
+        <td></td>
+        <td><div id="ip" style="width: 75px; height: 75px;"></div><p>(0 - 5 A) MI</p><p><output id=pammeter>0</output> A</p></td>
+        <td><div id="wp" style="width: 75px; height: 75px;"></div><p>(300 V / 5 A) UPF</p><p><output id=pwattmeter>0</output> W</p></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><div class="space">_______________________________________</div></td></tr>
+        
+       <tr><td><img src="../acsupplysym.png" height="100px" width="100px" alt="ac source">
+           <p>230 V, 50HZ AC Supply</p><p><input type="button" id="supply" onclick="supplyonoff()" value="ON"></p><div class=led id=ledcolor></div></td>
+        <td><input type="range" class="input-range" id=variac min=0 max=270 step="1" value=0 oninput=loading() onchange="this.value" orient=vertical>
+    <p>1 Phase Variac (0 - 270 V) / 50 A</p>
+    <p><output id=varout for=variac>0</output> V</p></td>
+        <td><div id="vp" style="width: 75px; height: 75px;"></div><p>(0 - 300 V) MI</p><p><output id=pvoltmeter>0</output> V</p>
+</td>
+        <td></td>
+        <td></td>
+        <td><div><p style="float: left">P1</p><p style="float: right">S1</p><img src="transformersym.png" height="200px" width="200px"><br><p style="float: left">P2</p><p style="float: right">S2</p><br></div><p id="kvachange">1 Phase 5 KVA (250 V / 250 V) Transformer</p></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td></tr>
+        
+        
+       </table>
+       
+    </div>
+    <div class=select><form>
+      <label>Enter the S.NO to Delete: </label><input type="text" id="del"/><br><br>
+        <input type="button" value="Delete Readings from Table" onclick="deleteFromTable()"><br><br>
+        </form></div>
+  <div class=tab>  <table id="myTable">
+      <caption class="caption" id="cap">Tabulation:</caption>
+  <tr>
+    <th> S.NO </th>
+    <th> Vp (V) </th>
+    <th> Ip (A) </th>
+    <th> Wp (W) </th>
+  </tr>
+      </table></div>
+
+  </body></html>
