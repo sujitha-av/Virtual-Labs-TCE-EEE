@@ -38,7 +38,7 @@ function myTimeout22() {
     document.getElementById('myImg').src = "./Assets/3.gif";
 }
 function myTimeout33() {
-    document.getElementById('myImg').src = "0v.gif";
+    document.getElementById('myImg').src = "./Assets/0v.gif";
 }
 function diodeval()
 {

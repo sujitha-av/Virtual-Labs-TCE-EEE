@@ -21,7 +21,7 @@ function timedText1rb(){
   setTimeout(myTimeout5, 6000)
 }   
 function myTimeout0() {
-    document.getElementById('myImg').src = "./Assets/./Assets/p-n222rb.gif";
+    document.getElementById('myImg').src = "./Assets/p-n222rb.gif";
 } 
 function myTimeout1() {
     document.getElementById('myImg').src = "./Assets/p-n2rb.gif";
@@ -30,14 +30,14 @@ function myTimeout2() {
     document.getElementById('myImg').src = "./Assets/jnformation112rb.gif";
 }
 function myTimeout3() {
-    document.getElementById('myImg').src = "./Assets/./Assets/Snapshot_6rb.gif";
+    document.getElementById('myImg').src = "./Assets/Snapshot_6rb.gif";
     checks=1;
 }    
 function myTimeout4() {
     document.getElementById('myImg').src = "./Assets/depletion_layer1112rb.gif";
 }
 function myTimeout5() {
-    document.getElementById('myImg').src = "./Assets/./Assets/Snapshot_1rb.gif";
+    document.getElementById('myImg').src = "./Assets/Snapshot_1rb.gif";
     
 }    
 function myTimeoutr0() {
@@ -333,7 +333,7 @@ function stepfour()
 }
 function reset() 
   {
-      document.getElementById('myImg').src= "p-n221rb.gif";
+      document.getElementById('myImg').src= "./Assets/p-n221rb.gif";
       document.getElementById("interval1").disabled=true;
       document.getElementById("interval2").disabled=true;
       document.getElementById("interval").disabled= false;

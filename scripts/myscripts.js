@@ -12,7 +12,7 @@ function enable() {
     if (check==1)
     {
     document.getElementById("s1").disabled = false;
-    document.getElementById('myImg').src = "0v.gif";
+    document.getElementById('myImg').src = "./Assets/0v.gif";
 }
     else
     {
