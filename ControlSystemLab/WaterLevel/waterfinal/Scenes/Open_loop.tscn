@@ -1,0 +1,654 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://Tiles/Sand road/road_sand18.png" type="Texture" id=1]
+[ext_resource path="res://Script/Open_loop.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/icon.png" type="Texture" id=3]
+[ext_resource path="res://Shaders/water.shader" type="Shader" id=4]
+[ext_resource path="res://Scenes/GoBack.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/StartWater.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/StopWater.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/ResetWater.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Fonts/ShareTechMono-Regular.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Scenes/ProgressBar.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Sprites/meter-modified.png" type="Texture" id=11]
+[ext_resource path="res://Tiles/Asphalt road/road_asphalt22.png" type="Texture" id=12]
+[ext_resource path="res://Tiles/Dirt road/road_dirt21.png" type="Texture" id=13]
+[ext_resource path="res://Themes/Cover.tres" type="Texture" id=14]
+[ext_resource path="res://Fonts/RobotoFlex.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://Fonts/VarelaRound-Regular.ttf" type="DynamicFontData" id=16]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 4 )
+shader_param/blue_tint = Color( 0, 0.784314, 1, 1 )
+shader_param/sprite_scale = Vector2( 0, 5 )
+shader_param/scale_x = 0.5
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+
+[sub_resource type="TileSet" id=5]
+0/name = "road_sand18.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 2 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "road_asphalt22.png 1"
+1/texture = ExtResource( 12 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 64, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 3 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "road_dirt21.png 2"
+2/texture = ExtResource( 13 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 64, 64 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 4 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+
+[sub_resource type="DynamicFont" id=6]
+size = 22
+font_data = ExtResource( 16 )
+
+[sub_resource type="Theme" id=7]
+default_font = SubResource( 6 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 23
+use_filter = true
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 20
+outline_size = 1
+use_filter = true
+font_data = ExtResource( 16 )
+
+[sub_resource type="Theme" id=10]
+default_font = SubResource( 9 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 23
+use_filter = true
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 23
+use_filter = true
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 23
+use_filter = true
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 50
+font_data = ExtResource( 9 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+content_margin_left = 2.0
+content_margin_right = 12.0
+border_width_left = 10
+border_width_right = 8
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.278431, 0.654902, 0.266667, 1 )
+border_blend = true
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+corner_detail = 10
+shadow_size = 2
+shadow_offset = Vector2( 0.633, 0 )
+anti_aliasing_size = 2
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.278431, 0.654902, 0.266667, 1 )
+border_blend = true
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+corner_detail = 10
+shadow_size = 2
+shadow_offset = Vector2( 0.633, 0 )
+anti_aliasing_size = 2
+
+[sub_resource type="DynamicFont" id=18]
+size = 13
+use_filter = true
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 11
+use_filter = true
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 11
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=21]
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=22]
+font_data = ExtResource( 15 )
+
+[node name="Open_Loop_Tank" type="Node2D"]
+position = Vector2( 143.894, 80.8661 )
+script = ExtResource( 2 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_left = -144.746
+margin_top = -79.2183
+margin_right = 890.254
+margin_bottom = 521.782
+texture = ExtResource( 14 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Water" type="Sprite" parent="."]
+material = SubResource( 1 )
+position = Vector2( 170.18, 293.47 )
+scale = Vector2( 6, 5 )
+texture = ExtResource( 3 )
+
+[node name="Cover" type="TextureRect" parent="."]
+margin_left = -22.0
+margin_top = 135.0
+margin_right = 363.0
+margin_bottom = 452.0
+texture = ExtResource( 14 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( -85.8165, 3.17839 )
+tile_set = SubResource( 5 )
+format = 1
+tile_data = PoolIntArray( 65536, 1, 0, 65543, 1, 0, 131072, 1, 0, 131079, 1, 0, 196608, 1, 0, 196615, 1, 0, 262144, 1, 0, 262151, 1, 0, 327680, 1, 0, 327687, 1, 0, 393216, 1, 0, 393223, 1, 0, 458752, 1, 0, 458753, 1, 0, 458754, 1, 0, 458755, 1, 0, 458756, 1, 0, 458757, 1, 0, 458758, 1, 0, 458759, 1, 0 )
+
+[node name="GoBack" parent="." instance=ExtResource( 5 )]
+margin_left = 689.0
+margin_top = 451.0
+margin_right = 866.0
+margin_bottom = 507.0
+reference_path = "res://Scenes/Select_screen.tscn"
+
+[node name="Plot" parent="." instance=ExtResource( 5 )]
+margin_left = 488.106
+margin_top = 451.0
+margin_right = 665.106
+margin_bottom = 507.0
+shortcut_in_tooltip = false
+shortcut = null
+text = "Plot"
+reference_path = "null"
+
+[node name="Start" parent="." instance=ExtResource( 6 )]
+margin_left = 648.106
+margin_top = -56.8661
+margin_right = 698.106
+margin_bottom = -6.8661
+script = null
+
+[node name="Stop" parent="." instance=ExtResource( 7 )]
+margin_left = 720.106
+margin_top = -56.8661
+margin_right = 770.106
+margin_bottom = -6.8661
+
+[node name="Reset" parent="." instance=ExtResource( 8 )]
+margin_left = 792.106
+margin_top = -56.8661
+margin_right = 842.106
+margin_bottom = -6.8661
+
+[node name="ProgressBar" parent="." instance=ExtResource( 10 )]
+visible = false
+margin_left = 440.106
+margin_top = 151.134
+margin_right = 542.106
+margin_bottom = 551.134
+rect_scale = Vector2( 0.6, 0.76 )
+step = 0.001
+
+[node name="meter-modified" type="Sprite" parent="ProgressBar"]
+position = Vector2( 66.6666, 200 )
+scale = Vector2( 1.2415, 0.988386 )
+texture = ExtResource( 11 )
+
+[node name="DesiredHeight" type="SpinBox" parent="."]
+margin_left = 141.134
+margin_top = -66.0628
+margin_right = 269.134
+margin_bottom = -10.0628
+theme = SubResource( 7 )
+max_value = 1000.0
+align = 1
+suffix = "cm"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DesiredHeight_Label" type="Label" parent="."]
+margin_left = -85.8165
+margin_top = -56.8661
+margin_right = 131.184
+margin_bottom = -8.8661
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Desired Height = "
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrHeight" type="SpinBox" parent="."]
+margin_left = 140.0
+margin_top = 3.0
+margin_right = 285.0
+margin_bottom = 59.0
+theme = SubResource( 10 )
+max_value = 1000.0
+step = 0.001
+allow_greater = true
+align = 1
+editable = false
+suffix = "cm"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrHeight_Lab" type="Label" parent="."]
+margin_left = -85.8165
+margin_top = 11.2373
+margin_right = 131.184
+margin_bottom = 59.2373
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Current Height = "
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeTaken" type="SpinBox" parent="."]
+margin_left = 468.0
+margin_top = -66.0628
+margin_right = 597.0
+margin_bottom = -10.0628
+theme = SubResource( 10 )
+step = 0.001
+allow_greater = true
+align = 1
+editable = false
+suffix = "s"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeTaken_Label" type="Label" parent="."]
+margin_left = 285.0
+margin_top = -60.3674
+margin_right = 468.0
+margin_bottom = -12.3674
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Time Taken ="
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Error" type="SpinBox" parent="."]
+margin_left = 400.0
+margin_top = 3.0
+margin_right = 544.0
+margin_bottom = 59.0
+theme = SubResource( 10 )
+max_value = 1000.0
+step = 0.001
+allow_greater = true
+allow_lesser = true
+align = 1
+editable = false
+suffix = "cm"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Error_Label" type="Label" parent="."]
+margin_left = 269.0
+margin_top = 11.0
+margin_right = 417.0
+margin_bottom = 59.0
+custom_fonts/font = SubResource( 13 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Error ="
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Display_label" type="Label" parent="."]
+margin_left = 472.106
+margin_top = 127.134
+margin_right = 857.106
+margin_bottom = 344.134
+custom_fonts/font = SubResource( 14 )
+text = "OPEN LOOP SYSTEM"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Plot_dialog" type="FileDialog" parent="."]
+margin_left = 160.0
+margin_top = 127.0
+margin_right = 600.0
+margin_bottom = 351.0
+window_title = "Plotting..."
+resizable = true
+dialog_text = "Select the location along with file name (*.txt)"
+dialog_autowrap = true
+access = 2
+current_dir = "/Users/dstev/OneDrive/Documents/GODOT/WaterProject"
+current_path = "/Users/dstev/OneDrive/Documents/GODOT/WaterProject/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSlider" type="VSlider" parent="."]
+margin_left = 354.0
+margin_top = 131.0
+margin_right = 378.0
+margin_bottom = 451.0
+rect_scale = Vector2( 2, 1 )
+custom_styles/slider = SubResource( 15 )
+custom_styles/grabber_area_highlight = SubResource( 16 )
+custom_styles/grabber_area = SubResource( 17 )
+step = 0.001
+allow_greater = true
+editable = false
+scrollable = false
+tick_count = 21
+ticks_on_borders = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VSlider"]
+margin_left = 21.1547
+margin_top = 303.226
+margin_right = 35.1547
+margin_bottom = 321.226
+custom_fonts/font = SubResource( 18 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="VSlider"]
+margin_left = 21.1547
+margin_top = 241.9
+margin_right = 35.1547
+margin_bottom = 259.9
+custom_fonts/font = SubResource( 18 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "20
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="VSlider"]
+margin_left = 20.7968
+margin_top = 28.1676
+margin_right = 34.7968
+margin_bottom = 46.1676
+custom_fonts/font = SubResource( 18 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "90"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label10" type="Label" parent="VSlider"]
+margin_left = 18.7923
+margin_top = -1.33635
+margin_right = 36.7923
+margin_bottom = 16.6637
+custom_fonts/font = SubResource( 19 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "100"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="VSlider"]
+margin_left = 21.1547
+margin_top = 59.2893
+margin_right = 35.1547
+margin_bottom = 77.2893
+custom_fonts/font = SubResource( 18 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "80"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="VSlider"]
+margin_left = 21.1547
+margin_top = 119.22
+margin_right = 35.1547
+margin_bottom = 137.22
+custom_fonts/font = SubResource( 18 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "60"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="VSlider"]
+margin_left = 20.9371
+margin_top = 211.02
+margin_right = 34.9371
+margin_bottom = 229.02
+custom_fonts/font = SubResource( 18 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "30"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label7" type="Label" parent="VSlider"]
+margin_left = 20.9371
+margin_top = 90.4908
+margin_right = 34.9371
+margin_bottom = 108.491
+custom_fonts/font = SubResource( 18 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "70"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label8" type="Label" parent="VSlider"]
+margin_left = 20.9371
+margin_top = 151.919
+margin_right = 34.9371
+margin_bottom = 169.919
+custom_fonts/font = SubResource( 18 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "50"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label9" type="Label" parent="VSlider"]
+margin_left = 20.9371
+margin_top = 180.134
+margin_right = 34.9371
+margin_bottom = 198.134
+custom_fonts/font = SubResource( 18 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "40"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label11" type="Label" parent="VSlider"]
+margin_left = 21.1547
+margin_top = 271.93
+margin_right = 35.1547
+margin_bottom = 289.93
+custom_fonts/font = SubResource( 18 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "10"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label12" type="Label" parent="VSlider"]
+margin_left = -27.3597
+margin_top = 318.337
+margin_right = 38.6403
+margin_bottom = 358.337
+custom_fonts/font = SubResource( 20 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Height(cms)"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Disturbance_button" type="CheckButton" parent="."]
+margin_left = -82.9314
+margin_top = 450.806
+margin_right = -6.9314
+margin_bottom = 490.806
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Disturbance_button"]
+margin_left = 3.97916
+margin_top = 36.2928
+margin_right = 89.9792
+margin_bottom = 55.2928
+custom_fonts/font = SubResource( 21 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Disturbance"
+
+[node name="HSlider" type="HSlider" parent="Disturbance_button"]
+margin_left = 77.6432
+margin_top = 9.94055
+margin_right = 201.643
+margin_bottom = 25.9406
+step = 0.1
+scrollable = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dist_slider_val" type="Label" parent="Disturbance_button/HSlider"]
+margin_left = 128.47
+margin_top = -0.940552
+margin_right = 168.47
+margin_bottom = 16.0594
+custom_fonts/font = SubResource( 22 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+valign = 1
+
+[connection signal="file_selected" from="Plot_dialog" to="." method="_on_Plot_dialog_file_selected"]
