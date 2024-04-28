@@ -7,6 +7,26 @@ body {background: #f6f8fa;font-family: Helvetica, Arial, sans-serif;font-size: 1
 
 .team {background:#000428;}
 
+div.scroll-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #fcfcfc;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+div.scroll-container img {
+  /* padding: 10px; */
+  height: 15rem;
+}
+
+.container {
+  padding: 20px;
+  background-color: #f1f1f1;
+  size: auto;
+}
+
 main {margin: 50px;}
 
 h1 {font-size: 36px;font-weight: bold;text-transform: uppercase;font-style: italic;}
